@@ -25,17 +25,46 @@ const PROMPTS = [
     fullText:
       "Design a novel composite biomaterial for myocardial infarction combining auxetic mechanics, electrical conductivity, and immunomodulation.",
     answers: {
-      dvnc: `A hierarchical cardiac patch — AuxiCond-MI — integrates three coupled mechanisms addressing the core failure modes of MI repair: mechanical mismatch, electrical isolation, and chronic inflammation.
+      dvnc: `╔══════════════════════════════════════════╗
+║     DVNC FINAL INNOVATION CARD          ║
+╚══════════════════════════════════════════╝
 
-Layer 1 (Immunomodulatory coating): GelMA hydrogel shell with sequenced cytokine depots. IL-10 nanocapsules (PLGA, 14-day profile) suppress M1 macrophage activity in the acute phase; TGF-β1 microspheres (days 7–28) drive M1→M2 polarisation. Temporal sequencing via differential microsphere wall thickness ensures IL-10 peaks at day 3–5, TGF-β1 at day 10–14.
+BRIEF: Design a composite cardiac patch that integrates auxetic mechanics, electrical conductivity, and immunomodulation for myocardial infarction treatment, with the specific innovation of strain-synchronized immunomodulatory release from geometrically-defined void compartments.
 
-Layer 2 (Conductive mesh): PCL fibres co-electrospun with graphene nanoribbons (2 wt%) and PEDOT:PSS at 3:1 PCL:PEDOT ratio. Bulk conductivity 4–8 mS/cm matching native myocardium. Fibres oriented circumferentially (±15°) to replicate helical cardiomyocyte architecture, improving conduction anisotropy 2–3× vs random meshes.
+ROUTE: biomaterial → platform[CO_OCCURS] → cardiac_biomaterials[EVOKES]
 
-Layer 3 (Auxetic core): Re-entrant honeycomb geometry 3D-bioprinted from GelMA/PCL blend (70:30). Re-entrant angle −30° yields Poisson ratio ≈ −0.3, matching biaxial shortening of ventricular wall. Porosity 72%, pore size 200–400 µm for vascularisation and cardiomyocyte infiltration.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CROSS-DOMAIN LEAP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+The re-entrant honeycomb geometry that enables auxetic behavior in cardiac patches [S5, S6] creates void spaces that expand under tensile strain—a phenomenon demonstrated for tunable mechanical properties [S7]. This geometric feature, originally optimized for mechanical compliance matching, can be repurposed as strain-modulated release compartments when loaded with immunomodulatory cargo. The innovation is NOT heartbeat-powered pumping (which has prior art in piezoelectric and strain-responsive systems), but rather the geometric co-location of auxetic struts serving triple duty: mechanical compliance, electrical conduction pathways, and boundaries defining immunomodulatory reservoirs [S5, S8]. The specific novelty lies in exploiting the void geometry—not the strain energy—to spatially organize immunomodulatory and conductive functions within a single architecture already validated for cardiac mechanical matching [S5, S6, S7].
 
-Layer 4 (Cell interface): RGD peptides (2 pmol/cm²), VEGF tethered gradient (5–50 ng/mL), laminin-521 matrix. iPSC-CM seeding at 1:4 MSC ratio for paracrine support.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+REFINED HYPOTHESIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+A hierarchical cardiac patch can integrate the established auxetic-conductive scaffold architecture [S5, S6, S7] with immunomodulatory strategies for cardiac regeneration [S8] by utilizing the re-entrant void spaces as compartments for M2-polarizing factor depots, achieving spatial organization of three functional components within a single geometry. Rather than claiming mechano-activated pumping (which requires validation), the hypothesis proposes that geometric co-registration of auxetic compliance, conductive networks, and immunomodulatory reservoirs reduces interfacial complexity and enables synchronized degradation kinetics aligned with cardiac remodeling phases [S7, S8]. The immunomodulatory component addresses the limitation of existing auxetic-conductive patches, which demonstrate mechanical and electrical integration but lack immunoengineering [S5, S8].
 
-Key design tensions resolved: conductive mesh placed above auxetic core (not within it) to preserve both void geometry and conduction pathways; immunosuppressants on outer surface, angiogenic signals on inner surface to decouple signalling axes.`,
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EXPERIMENTAL PROGRAMME
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Step 1 [S6]: Fabricate auxetic scaffolds using laser ablation of chitosan-polyester films per established protocols, targeting Poisson ratio between -0.3 and -0.8 (measured via optical strain tracking under uniaxial tension) and conductivity 0.13 S/cm achieved through PEDOT:PSS integration as documented [S6, S7].
+  → IF Poisson ratio within range AND conductivity ≥0.1 S/cm: proceed to Step 2
+  → ELSE: Adjust unit cell geometry (re-entrant angle, strut thickness) per parametric modeling
+
+Step 2 [S8]: Load PLGA microspheres (10-50 μm diameter, containing IL-4 at 100 ng/mg loading based on immunomodulation literature [S8]) into void spaces using vacuum infiltration. Characterize retention under cyclic loading (12% strain, 1.5 Hz, 1000 cycles) via fluorescent tracking.
+  → IF ≥70% microsphere retention after 1000 cycles: proceed to Step 3
+  → ELSE: Apply fibrin glue surface treatment to void walls for enhanced adhesion
+
+Step 3 [S7]: Measure conduction velocity across loaded vs. unloaded patches using microelectrode array mapping per cardiac patch characterization methods. Baseline target: conduction velocity ≥15 cm/s for unloaded auxetic-conductive patch [S7].
+  → IF loaded patch maintains ≥85% of unloaded conduction velocity (≥12.75 cm/s): proceed to Step 4
+  → ELSE: Reduce microsphere loading density to 50% of void volume
+
+Step 4 [S5, S7]: Implant in rodent MI model (LAD ligation). At days 7, 21, 42: explant subsets for histological assessment of scaffold degradation (mass loss, molecular weight), fibrotic area (Masson's trichrome), and wall thickness (echocardiography). Compare degradation timeline to target phases: acute (1-7d), proliferative (7-21d), maturation (21-90d) [S7, S8].
+  → IF scaffold retains ≥50% mass at day 21 AND ≤20% mass at day 60: proceed to Step 5
+  → ELSE: Modify polyester blend ratio to adjust degradation kinetics
+
+Step 5 [S7, S8]: At day 14, quantify macrophage phenotype via flow cytometry (CD86+/CD206+ ratio for M1/M2). At week 4, measure ejection fraction via echocardiography. Compare to: (a) untreated MI control, (b) auxetic-conductive patch without immunomodulation [S7], (c) immunomodulatory patch without auxetic architecture.
+  → IF M2/M1 ratio significantly elevated vs. control (p<0.05) AND ΔEF ≥5% improvement vs. auxetic-only group: advance to large animal validation
+  → ELSE: Increase IL-4 loading or add IL-10 co-delivery per immunomodulation strategies [S8]`,
 
       chatgpt: `A composite cardiac patch for MI treatment can be designed using three integrated functional components.
 
