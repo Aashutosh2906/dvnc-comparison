@@ -329,14 +329,12 @@ main {
 .btn-primary:hover:not(:disabled) svg { transform: translateX(3px); }
 
 /* ── LOADING ─────────────────────────────────────────────── */
-#step-loading {
-  min-height: calc(100vh - 130px);
+#step-loading.active {
   display: flex;
+  min-height: calc(100vh - 130px);
   align-items: center;
   justify-content: center;
 }
-
-#step-loading.active { display: flex; }
 
 .loading-wrap {
   text-align: center;
