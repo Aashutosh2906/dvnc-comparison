@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DVNC — Intelligence Comparison</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-mark">D</span>
+        <span class="logo-text">DVNC<span class="logo-dot">.</span>AI</span>
+      </div>
+      <div class="header-tag">Intelligence Benchmark</div>
+    </div>
+  </header>
+
+  <!-- ── MAIN ── -->
+  <main id="app">
+
+    <!-- ════ STEP 1: SELECT PROMPT ════ -->
+    <section id="step-select" class="step active">
+      <div class="step-hero">
+        <p class="step-eyebrow">See the difference</p>
+        <h1 class="step-title">How does DVNC.AI compare?</h1>
+        <p class="step-sub">Select a prompt, choose a model, and see a side-by-side analysis of reasoning quality.</p>
+      </div>
+
+      <div class="prompt-grid" id="prompt-cards"></div>
+
+      <div class="model-row" id="model-row">
+        <p class="model-label">Compare against</p>
+        <div class="model-buttons" id="model-buttons">
+          <button class="model-btn" data-model="chatgpt">
+            <span class="model-icon">⬡</span>ChatGPT
+          </button>
+          <button class="model-btn" data-model="claude">
+            <span class="model-icon">◈</span>Claude
+          </button>
+          <button class="model-btn" data-model="gemini">
+            <span class="model-icon">◇</span>Gemini
+          </button>
+        </div>
+      </div>
+
+      <div class="cta-row" id="cta-row">
+        <button class="btn-primary" id="btn-compare" disabled>
+          Generate comparison
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ════ STEP 2: LOADING ════ -->
+    <section id="step-loading" class="step">
+      <div class="loading-wrap">
+        <div class="loading-orb"></div>
+        <p class="loading-status" id="loading-status">Initialising knowledge graph…</p>
+        <div class="loading-bar-track">
+          <div class="loading-bar-fill" id="loading-bar"></div>
+        </div>
+        <p class="loading-hint">Querying DVNC multi-agent reasoning pipeline</p>
+      </div>
+    </section>
+
+    <!-- ════ STEP 3: RESULTS ════ -->
+    <section id="step-results" class="step">
+
+      <div class="results-header">
+        <div class="results-meta">
+          <p class="results-prompt-label" id="results-prompt-label"></p>
+        </div>
+        <button class="btn-ghost" id="btn-restart">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v5h5"/></svg>
+          Try another prompt
+        </button>
+      </div>
+
+      <!-- Answer panels -->
+      <div class="panels-row">
+        <div class="panel panel-dvnc">
+          <div class="panel-header">
+            <div class="panel-badge badge-dvnc">DVNC.AI</div>
+            <span class="panel-tag">Polymath Intelligence Engine</span>
+          </div>
+          <div class="panel-body" id="dvnc-answer"></div>
+        </div>
+        <div class="panel panel-competitor">
+          <div class="panel-header">
+            <div class="panel-badge badge-competitor" id="competitor-badge"></div>
+            <span class="panel-tag" id="competitor-tag"></span>
+          </div>
+          <div class="panel-body" id="competitor-answer"></div>
+        </div>
+      </div>
+
+      <!-- Comparison toggle -->
+      <div class="compare-toggle-row">
+        <button class="btn-compare-toggle" id="btn-show-table">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2zm0 0V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10m6 0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2m0 0V5a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v14m6 0a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2z"/></svg>
+          View detailed comparison
+        </button>
+      </div>
+
+      <!-- Comparison table -->
+      <div class="compare-table-wrap" id="compare-table-wrap">
+        <div class="compare-table-header">
+          <h2 class="compare-table-title">Criteria analysis</h2>
+          <p class="compare-table-sub">Scored across 8 dimensions of reasoning quality</p>
+        </div>
+        <div class="compare-table-scroll">
+          <table class="compare-table" id="compare-table">
+            <thead>
+              <tr>
+                <th class="col-criterion">Criterion</th>
+                <th class="col-dvnc">DVNC.AI</th>
+                <th class="col-competitor" id="th-competitor">Competitor</th>
+              </tr>
+            </thead>
+            <tbody id="compare-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <p>© 2025 The DaVinci Network · <a href="https://dvnc.ai" target="_blank">dvnc.ai</a></p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
