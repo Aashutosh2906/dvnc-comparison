@@ -163,6 +163,7 @@ function renderResults() {
   document.getElementById('btn-show-table').classList.remove('open');
 
   showStep('step-results');
+  window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
 // ── TOGGLE TABLE ──────────────────────────────────────────
