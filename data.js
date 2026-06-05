@@ -108,6 +108,7 @@ The integration challenge lies in ensuring the conducting polymer coating does n
         { dvnc: "High", competitor: "Moderate", dvncNote: "Architecture can extend across regenerative biomaterials.", competitorNote: "Complex multi-component design may hinder scaling." },
         { dvnc: "Very High", competitor: "Moderate", dvncNote: "Detailed steps, thresholds, decision gates provided.", competitorNote: "Targets given but no execution programme." },
         { dvnc: "Very High", competitor: "Very High", dvncNote: "Strong cardiac biomaterials expertise demonstrated.", competitorNote: "Exceptional breadth across immunology and bioelectronics." },
+      ],
       gemini: [
         { dvnc: "Very High", competitor: "Moderate", dvncNote: "Four functionally distinct layers with resolved inter-layer conflicts", competitorNote: "Combination of known elements; no integration architecture described" },
         { dvnc: "High",      competitor: "Moderate", dvncNote: "Temporal cytokine sequencing via wall thickness is a specific design choice", competitorNote: "PANI/PPy coating approach is standard; curcumin nanoparticles underdeveloped" },
