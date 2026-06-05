@@ -11,9 +11,9 @@ const MODEL_LABELS = {
 };
 
 const MODEL_TAGS = {
-  chatgpt: 'GPT-4o',
-  claude:  'Claude 3.5 Sonnet',
-  gemini:  'Gemini 1.5 Pro',
+  chatgpt: 'GPT-5.5',
+  claude:  'Claude 4.6 Sonnet',
+  gemini:  'Gemini 3.5 Flash',
 };
 
 const LOADING_STEPS = [
